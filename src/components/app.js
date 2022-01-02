@@ -1,5 +1,12 @@
 import React from "react";
+import { NavBar } from "./navbar";
+import { RoutesWeb } from "./routesWeb";
 
 export const App = () => {
-  return <h1> HELLO WORLD </h1>;
+  return (
+    <>
+      <RoutesWeb />
+      <NavBar />
+    </>
+  );
 };
