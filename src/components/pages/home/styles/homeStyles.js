@@ -4,7 +4,6 @@ import HomeBg from "../../../../assets/home.png";
 export const Styles = makeStyles(() =>
   createStyles({
     root: {
-      height: "90vh",
       backgroundImage: `url(${HomeBg})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",

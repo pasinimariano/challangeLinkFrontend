@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
-import { TitleBox } from "./modules/titleBox";
-import { ImageBox } from "./modules/imageBox";
-import { getRandomPk } from "./functions/getRandomPk";
-import { SetInfo } from "./functions/setPokemonInfo";
+import { TitleBox } from "../../home/titleBox";
+import { ImageBox } from "../../home/imageBox";
+import { getRandomPk } from "../../home/functions/getRandomPk";
+import { SetInfo } from "../../home/functions/setPokemonInfo";
 import { Styles } from "./styles/homeStyles";
 
 export const HomePage = () => {

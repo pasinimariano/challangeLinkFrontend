@@ -1,0 +1,15 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+
+export const LinkNavigation = ({ to, label, icon, route, classes }) => {
+  return (
+    <Link to={to}>
+      <BottomNavigationAction
+        label={label}
+        icon={icon}
+        className={route === { to } ? classes.selected : classes.noSelected}
+      />
+    </Link>
+  );
+};
