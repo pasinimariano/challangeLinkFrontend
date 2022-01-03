@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { getPokemons } from "../../../redux/actions";
 import { Grid } from "@material-ui/core";
 import { TitleBox } from "../../home/titleBox";
 import { ImageBox } from "../../home/imageBox";
@@ -6,7 +8,7 @@ import { getRandomPk } from "../../home/functions/getRandomPk";
 import { SetInfo } from "../../home/functions/setPokemonInfo";
 import { Styles } from "./styles/homeStyles";
 
-export const HomePage = () => {
+const HomePage = ({ allPokemons, getPokemons }) => {
   const [randomPk, setRandomPk] = useState([]);
   const classes = Styles();
 
@@ -15,6 +17,8 @@ export const HomePage = () => {
     const pokemonData = SetInfo(pokemon.data);
 
     setRandomPk(pokemonData);
+
+    allPokemons.length === 0 ? getPokemons() : null;
   }, []);
 
   return (
@@ -27,3 +31,17 @@ export const HomePage = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    allPokemons: state.AllPokemons,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getPokemons: () => dispatch(getPokemons()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

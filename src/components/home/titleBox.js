@@ -5,7 +5,7 @@ export const TitleBox = ({ classes, pokemon }) => {
   return (
     <>
       {!pokemon.sprite ? null : (
-        <Grid container xs={12} lg={12} className={classes.title}>
+        <Grid container className={classes.title}>
           <Grid item md={5} lg={5} />
           <Grid item xs={6} md={2} lg={2} className={classes.titleMidle}>
             <Avatar

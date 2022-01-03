@@ -1,18 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const isProduction = process.env.NODE_ENV === "production";
+const publicPath = process.env.PUBLIC_URL || "/";
+
 module.exports = {
-  context: __dirname,
-  entry: "./src/index.js",
+  mode: isProduction ? "production" : "development",
+  bail: isProduction,
+  entry: {
+    src: ["./src/index.js"],
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
-    publicPath: "/",
+    publicPath,
   },
-  mode: process.env.NODE_ENV || "development",
-  resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
-  devServer: {
-    historyApiFallback: true,
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -38,7 +41,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: "./public/index.html",
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    port: 3000,
+  },
 };

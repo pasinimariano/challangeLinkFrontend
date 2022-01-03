@@ -1,5 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { Grid } from "@material-ui/core";
+import { getPokemons, pagination } from "../../../redux/actions";
+import { Statements } from "../../pokedex/functions/statement";
+import { SearchBar } from "../../pokedex/searchBar";
+import { PokedexBox } from "../../pokedex/pokedexBox";
+import { Styles } from "./styles/pokedexStyles";
 
-export const PokedexPage = () => {
-  return <h2>POKEDEX</h2>;
+const PokedexPage = ({
+  allPokemons,
+  getPokemons,
+  PaginationPokemon,
+  pagination,
+}) => {
+  const classes = Styles();
+  const [pagedPokemons, setPagedPokemons] = useState();
+
+  const {
+    indexFirstPokemon,
+    setindexFirstPokemon,
+    indexLastPokemon,
+    setindexLastPokemon,
+    nextPage,
+    prevPage,
+    pokemonXpage,
+  } = Statements();
+
+  useEffect(() => {
+    pagination(allPokemons, indexFirstPokemon, indexLastPokemon);
+  }, [indexFirstPokemon, indexLastPokemon]);
+
+  return (
+    <div className={classes.root}>
+      <Grid container>
+        <Grid item className={classes.separator} xs={12} lg={12} />
+        <SearchBar classes={classes} />
+        <PokedexBox
+          pokemons={PaginationPokemon}
+          classes={classes}
+          pokemonXpage={pokemonXpage}
+          allPokemons={allPokemons}
+          nextPage={() => nextPage(allPokemons)}
+        />
+      </Grid>
+    </div>
+  );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    allPokemons: state.AllPokemons,
+    PaginationPokemon: state.PaginationPokemon,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getPokemons: () => dispatch(getPokemons()),
+    pagination: (pokemons, page, offset) =>
+      dispatch(pagination(pokemons, page, offset)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PokedexPage);
