@@ -25,10 +25,6 @@ export const Styles = makeStyles(() =>
       backgroundColor: "#212121ff",
       transform: "skew(-21deg, 0deg)",
     },
-    seeker: {
-      backgroundColor: "dark-gray",
-      textInput: "red",
-    },
     pokemonName: {
       transform: "skew(-21deg, 0deg)",
       backgroundColor: "#d8d8d8ff",
@@ -40,6 +36,16 @@ export const Styles = makeStyles(() =>
       color: "#212121ff",
       fontWeight: "bolder",
       fontSize: 25,
+    },
+    imageContainer: {
+      width: "100%",
+      height: "55%",
+      display: "flex",
+      justifyContent: "center",
+      marginTop: "20px",
+    },
+    image: {
+      height: "100%",
     },
     tableContainer: {
       backgroundColor: "rgba(0,0,0,0)",
