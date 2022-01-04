@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Grid } from "@material-ui/core";
 import { getPokemons, pagination } from "../../../redux/actions";
@@ -7,20 +7,12 @@ import { SearchBar } from "../../pokedex/searchBar";
 import { PokedexBox } from "../../pokedex/pokedexBox";
 import { Styles } from "./styles/pokedexStyles";
 
-const PokedexPage = ({
-  allPokemons,
-  getPokemons,
-  PaginationPokemon,
-  pagination,
-}) => {
+const PokedexPage = ({ allPokemons, PaginationPokemon, pagination }) => {
   const classes = Styles();
-  const [pagedPokemons, setPagedPokemons] = useState();
 
   const {
     indexFirstPokemon,
-    setindexFirstPokemon,
     indexLastPokemon,
-    setindexLastPokemon,
     nextPage,
     prevPage,
     pokemonXpage,
@@ -41,6 +33,9 @@ const PokedexPage = ({
           pokemonXpage={pokemonXpage}
           allPokemons={allPokemons}
           nextPage={() => nextPage(allPokemons)}
+          prevPage={prevPage}
+          indexFirstPokemon={indexFirstPokemon}
+          indexLastPokemon={indexLastPokemon}
         />
       </Grid>
     </div>

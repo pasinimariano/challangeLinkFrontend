@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import HomeIcon from "@material-ui/icons/Home";
 import AppsIcon from "@material-ui/icons/Apps";
 import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
