@@ -1,9 +1,9 @@
 import axios from "axios";
-import { GET_POKEMONS, PAGINATION } from "./actionsCreators";
+import { GET_POKEMONS, PAGINATION, SELECTION } from "./actionsCreators";
 
 const getUrls = () => {
   const response = axios
-    .get("https://pokeapi.co/api/v2/pokemon/?limit=809")
+    .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
     .then((json) => json.data.results);
 
   return response;
@@ -29,6 +29,14 @@ const formatedData = (pokemons) => {
       sprite: pokemon.sprites.versions["generation-vii"].icons.front_default,
       image: pokemon.sprites["other"]["official-artwork"].front_default,
       name: pokemon.name,
+      height: pokemon.height,
+      weight: pokemon.weight,
+      hp: pokemon.stats[0]["base_stat"],
+      atk: pokemon.stats[1]["base_stat"],
+      def: pokemon.stats[2]["base_stat"],
+      spc_atk: pokemon.stats[3]["base_stat"],
+      spc_def: pokemon.stats[4]["base_stat"],
+      spd: pokemon.stats[5]["base_stat"],
     };
   });
   return response;
@@ -58,4 +66,12 @@ export const pagination = (pokemons, page, offset, seeker) => {
   }
 
   return { type: PAGINATION, payload: response };
+};
+
+export const selectedPokemon = (pokemonSelected) => {
+  if (pokemonSelected !== undefined) {
+    return { type: SELECTION, payload: pokemonSelected };
+  } else {
+    return { type: SELECTION, payload: false };
+  }
 };

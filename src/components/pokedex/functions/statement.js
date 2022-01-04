@@ -4,6 +4,7 @@ export const Statements = () => {
   const [indexFirstPokemon, setindexFirstPokemon] = useState(0);
   const [indexLastPokemon, setindexLastPokemon] = useState(50);
   const [seeker, setSeeker] = useState();
+  const [selection, setSelection] = useState();
   const pokemonXpage = 50;
 
   const nextPage = (pokemons) => {
@@ -30,5 +31,7 @@ export const Statements = () => {
     pokemonXpage,
     seeker,
     setSeeker,
+    selection,
+    setSelection,
   };
 };

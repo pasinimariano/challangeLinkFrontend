@@ -1,4 +1,4 @@
-import { makeStyles, createStyles, FormHelperText } from "@material-ui/core";
+import { makeStyles, createStyles } from "@material-ui/core";
 import PokedexBg from "../../../../assets/pokedex.png";
 
 export const Styles = makeStyles(() =>
@@ -15,15 +15,31 @@ export const Styles = makeStyles(() =>
     title: {
       height: "7vh",
     },
+    input: {
+      color: "#f6f6f6ff",
+    },
     seekerContainer: {
       display: "flex",
       justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#212121ff",
+      transform: "skew(-21deg, 0deg)",
     },
     seeker: {
-      transform: "skew(-21deg, 0deg)",
+      backgroundColor: "dark-gray",
+      textInput: "red",
     },
     pokemonName: {
       transform: "skew(-21deg, 0deg)",
+      backgroundColor: "#d8d8d8ff",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    name: {
+      color: "#212121ff",
+      fontWeight: "bolder",
+      fontSize: 25,
     },
     tableContainer: {
       backgroundColor: "rgba(0,0,0,0)",

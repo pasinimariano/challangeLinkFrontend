@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import Pokeball from "../../../assets/Pokeball.png";
 
-export const PokemonTable = ({ pokemons, classes }) => {
+export const PokemonTable = ({ pokemons, setSelection, classes }) => {
   return (
     <Paper className={classes.tableContainer} elevation={0}>
       <TableContainer className={classes.pokedexContainer}>
@@ -23,7 +23,7 @@ export const PokemonTable = ({ pokemons, classes }) => {
                   role="checkbox"
                   tabIndex={-1}
                   key={pokemon.id}
-                  onClick={() => console.log("ay")}
+                  onClick={() => setSelection(pokemon)}
                 >
                   <TableCell>
                     <Avatar
