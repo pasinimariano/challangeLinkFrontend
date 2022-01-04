@@ -18,18 +18,8 @@ const getData = async () => {
   return Promise.all(pokemonData);
 };
 
-export const getPokemons = () => {
-  return async (dispatch) => {
-    const pokemon = await getData();
-
-    dispatch({ type: GET_POKEMONS, payload: await pokemon });
-  };
-};
-
-export const pagination = (pokemons, page, offset) => {
-  const pokemonPagination = pokemons.slice(page, offset);
-
-  const formatedData = pokemonPagination.map((pokemon) => {
+const formatedData = (pokemons) => {
+  const response = pokemons.map((pokemon) => {
     let id;
     if (pokemon.id.toString().length === 1) id = `00${pokemon.id}`;
     else if (pokemon.id.toString().length === 2) id = `0${pokemon.id}`;
@@ -41,6 +31,31 @@ export const pagination = (pokemons, page, offset) => {
       name: pokemon.name,
     };
   });
+  return response;
+};
 
-  return { type: PAGINATION, payload: formatedData };
+export const getPokemons = () => {
+  return async (dispatch) => {
+    const pokemon = await getData();
+
+    dispatch({ type: GET_POKEMONS, payload: await pokemon });
+  };
+};
+
+export const pagination = (pokemons, page, offset, seeker) => {
+  let response;
+  if (!seeker) {
+    const pokemonPagination = pokemons.slice(page, offset);
+
+    response = formatedData(pokemonPagination);
+  } else {
+    const pokemonSearched = pokemons.filter((pokemon) =>
+      pokemon["name"].toLowerCase().includes(seeker)
+    );
+    const pokemonPagination = pokemonSearched.slice(page, offset);
+
+    response = formatedData(pokemonPagination);
+  }
+
+  return { type: PAGINATION, payload: response };
 };

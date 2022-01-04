@@ -16,17 +16,19 @@ const PokedexPage = ({ allPokemons, PaginationPokemon, pagination }) => {
     nextPage,
     prevPage,
     pokemonXpage,
+    seeker,
+    setSeeker,
   } = Statements();
 
   useEffect(() => {
-    pagination(allPokemons, indexFirstPokemon, indexLastPokemon);
-  }, [indexFirstPokemon, indexLastPokemon]);
+    pagination(allPokemons, indexFirstPokemon, indexLastPokemon, seeker);
+  }, [indexFirstPokemon, indexLastPokemon, seeker]);
 
   return (
     <div className={classes.root}>
       <Grid container>
         <Grid item className={classes.separator} xs={12} lg={12} />
-        <SearchBar classes={classes} />
+        <SearchBar seeker={seeker} setSeeker={setSeeker} classes={classes} />
         <PokedexBox
           pokemons={PaginationPokemon}
           classes={classes}
@@ -52,8 +54,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getPokemons: () => dispatch(getPokemons()),
-    pagination: (pokemons, page, offset) =>
-      dispatch(pagination(pokemons, page, offset)),
+    pagination: (pokemons, page, offset, seeker) =>
+      dispatch(pagination(pokemons, page, offset, seeker)),
   };
 };
 

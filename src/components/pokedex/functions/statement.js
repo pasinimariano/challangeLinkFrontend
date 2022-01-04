@@ -3,6 +3,7 @@ import { useState } from "react";
 export const Statements = () => {
   const [indexFirstPokemon, setindexFirstPokemon] = useState(0);
   const [indexLastPokemon, setindexLastPokemon] = useState(50);
+  const [seeker, setSeeker] = useState();
   const pokemonXpage = 50;
 
   const nextPage = (pokemons) => {
@@ -27,5 +28,7 @@ export const Statements = () => {
     nextPage,
     prevPage,
     pokemonXpage,
+    seeker,
+    setSeeker,
   };
 };

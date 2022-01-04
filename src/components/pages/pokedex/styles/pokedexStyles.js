@@ -14,7 +14,13 @@ export const Styles = makeStyles(() =>
     },
     title: {
       height: "7vh",
-      backgroundColor: "red",
+    },
+    seekerContainer: {
+      display: "flex",
+      justifyContent: "center",
+    },
+    seeker: {
+      transform: "skew(-21deg, 0deg)",
     },
     pokemonName: {
       transform: "skew(-21deg, 0deg)",
@@ -24,7 +30,7 @@ export const Styles = makeStyles(() =>
       display: "flex",
       alignItems: "center",
       justifyContent: "flex-start",
-      marginTop: "10px",
+      marginTop: "20px",
       marginBottom: "10px",
     },
     pokedexContainer: {
