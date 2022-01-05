@@ -1,5 +1,8 @@
 import React from "react";
+import { Styles } from "./styles/contactStyles";
 
 export const ContactPage = () => {
-  return <h2>CONTACT</h2>;
+  const classes = Styles();
+
+  return <div className={classes.root}></div>;
 };
