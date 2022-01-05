@@ -11,7 +11,9 @@ export const SearchBar = ({ setSeeker, selection, classes }) => {
           <Typography className={classes.name}>
             {selection.name.toUpperCase()}
           </Typography>
-        ) : null}
+        ) : (
+          <Typography>Selecciona algún pokemon</Typography>
+        )}
       </Grid>
       <Grid item xs={6} lg={6} className={classes.seekerContainer}>
         <TextField

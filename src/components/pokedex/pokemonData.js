@@ -1,18 +1,18 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import { PokemonStats } from "./modules/pokemonStats";
+import Pikachu from "../../assets/pikachu.png";
 
 export const PokemonData = ({ selection, classes }) => {
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div className={classes.dataContainer}>
       {!selection ? (
-        <h2>Aca</h2>
+        <div className={classes.imageContainer}>
+          <img
+            alt={"Pikachu sprite"}
+            src={Pikachu}
+            className={classes.pikachu}
+          />
+        </div>
       ) : (
         <div>
           <div className={classes.imageContainer}>

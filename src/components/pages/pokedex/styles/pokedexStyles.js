@@ -47,6 +47,9 @@ export const Styles = makeStyles(() =>
     image: {
       height: "100%",
     },
+    pikachu: {
+      height: "50%",
+    },
     tableContainer: {
       backgroundColor: "rgba(0,0,0,0)",
       display: "flex",
@@ -73,6 +76,15 @@ export const Styles = makeStyles(() =>
       display: "flex",
       alignItems: "center",
       justifyContent: "space-around",
+    },
+    dataContainer: {
+      height: "100%",
+      display: "flex",
+      justifyContent: "center",
+    },
+    statsContainer: {
+      backgroundColor: "#d8d8d8ff",
+      transform: "skew(-21deg, 0deg)",
     },
   })
 );
