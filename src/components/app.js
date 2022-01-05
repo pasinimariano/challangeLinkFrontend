@@ -9,10 +9,10 @@ export const App = () => {
   const classes = Styles();
   return (
     <Grid container className={classes.root}>
-      <Paper className={classes.layout}>
+      <Paper className={classes.layout} elevation={0}>
         <RoutesWeb />
       </Paper>
-      <Paper className={classes.navigation}>
+      <Paper className={classes.navigation} elevation={0}>
         <NavBar />
       </Paper>
     </Grid>

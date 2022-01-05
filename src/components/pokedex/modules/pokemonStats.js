@@ -10,8 +10,8 @@ export const PokemonStats = ({ selection, classes }) => {
         <Table stickyHeader aria-label="sticky table">
           <TableBody>
             <TableRow>
-              <TableCells name="HGT" data={selection.height} max="150" />
-              <TableCells name="WGT" data={selection.weight} max="9999" />
+              <TableCells name="HGT" data={selection.height} max="100" />
+              <TableCells name="WGT" data={selection.weight} max="2000" />
               <TableCells name="HP" data={selection.hp} max="255" />
               <TableCells name="SPD" data={selection.spd} max="255" />
             </TableRow>

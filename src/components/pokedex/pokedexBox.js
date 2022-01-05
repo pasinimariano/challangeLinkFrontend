@@ -17,10 +17,10 @@ export const PokedexBox = ({
 }) => {
   return (
     <Grid container>
-      <Grid item lg={6}>
+      <Grid item xs={12} sm={6}>
         <PokemonData selection={selection} classes={classes} />
       </Grid>
-      <Grid item lg={6}>
+      <Grid item xs={12} sm={6} className={classes.gridTable}>
         <PokemonTable
           pokemons={pokemons}
           classes={classes}

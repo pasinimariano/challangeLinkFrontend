@@ -6,7 +6,7 @@ export const PokemonData = ({ selection, classes }) => {
   return (
     <div className={classes.dataContainer}>
       {!selection ? (
-        <div className={classes.imageContainer}>
+        <div className={classes.pikachuContainer}>
           <img
             alt={"Pikachu sprite"}
             src={Pikachu}

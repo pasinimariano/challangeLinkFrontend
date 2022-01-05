@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 export const SearchBar = ({ setSeeker, selection, classes }) => {
   return (
     <Grid container className={classes.title}>
-      <Grid item xs={6} lg={6} className={classes.pokemonName}>
+      <Grid item xs={12} sm={6} className={classes.pokemonName}>
         {selection ? (
           <Typography className={classes.name}>
             {selection.name.toUpperCase()}
@@ -15,7 +15,7 @@ export const SearchBar = ({ setSeeker, selection, classes }) => {
           <Typography>Selecciona algún pokemon</Typography>
         )}
       </Grid>
-      <Grid item xs={6} lg={6} className={classes.seekerContainer}>
+      <Grid item xs={12} sm={6} className={classes.seekerContainer}>
         <TextField
           InputProps={{
             className: classes.input,

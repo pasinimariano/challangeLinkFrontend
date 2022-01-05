@@ -16,13 +16,13 @@ export const Pagination = ({
 }) => {
   return (
     <Grid container>
-      <Grid item lg={3} className={classes.gridCount}>
+      <Grid item xs={6} sm={4} className={classes.gridCount}>
         <Typography className={classes.count}>
           {indexFirstPokemon + 1} - {indexLastPokemon + 1} of{" "}
           {allPokemons.length}
         </Typography>
       </Grid>
-      <Grid item lg={4} className={classes.pagination}>
+      <Grid item xs={4} sm={4} className={classes.pagination}>
         <Button onClick={prevPage} variant="outlined">
           <ArrowBackIosIcon />
         </Button>

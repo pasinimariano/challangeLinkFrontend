@@ -4,10 +4,11 @@ import PokedexBg from "../../../../assets/pokedex.png";
 export const Styles = makeStyles(() =>
   createStyles({
     root: {
-      height: "90vh",
+      width: "100vw",
       backgroundImage: `url(${PokedexBg})`,
-      backgroundRepeat: "no-repeat",
+      backgroundRepeat: "repeat",
       backgroundSize: "cover",
+      backgroundPosition: "center",
     },
     separator: {
       height: "7vh",
@@ -47,11 +48,23 @@ export const Styles = makeStyles(() =>
     image: {
       height: "100%",
     },
+    pikachuContainer: {
+      height: "75vh",
+      display: "flex",
+      alignItems: "center",
+    },
     pikachu: {
       height: "50%",
     },
+    gridTable: {
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
+      height: "90vh",
+    },
     tableContainer: {
       backgroundColor: "rgba(0,0,0,0)",
+      width: "65%",
       display: "flex",
       alignItems: "center",
       justifyContent: "flex-start",
@@ -60,7 +73,7 @@ export const Styles = makeStyles(() =>
     },
     pokedexContainer: {
       maxHeight: 450,
-      width: "80%",
+      width: "100%",
       backgroundColor: "#d8d8d8ff",
       transform: "skew(-21deg, 0deg)",
     },
