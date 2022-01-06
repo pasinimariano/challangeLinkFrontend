@@ -5,14 +5,14 @@ export const Styles = makeStyles(() =>
   createStyles({
     root: {
       display: "flex",
-      width: "100vw",
+      width: "98vw",
       height: "200vh",
       backgroundImage: `url(${Cv})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       backgroundPosition: "center",
-      marginTop: "50px",
-      marginBottom: "100px",
+      marginTop: "2%",
+      marginBottom: "7%",
     },
   })
 );

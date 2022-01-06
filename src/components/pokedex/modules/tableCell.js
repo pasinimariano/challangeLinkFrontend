@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 export const TableCells = ({ name, data, max }) => {
   const value = (data * 100) / max;
   return (
-    <TableCell>
+    <TableCell style={{ width: "60px" }}>
       <Typography
         style={{
           position: "absolute",

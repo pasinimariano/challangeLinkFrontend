@@ -10,16 +10,48 @@ export const PokemonStats = ({ selection, classes }) => {
         <Table stickyHeader aria-label="sticky table">
           <TableBody>
             <TableRow>
-              <TableCells name="HGT" data={selection.height} max="100" />
-              <TableCells name="WGT" data={selection.weight} max="2000" />
-              <TableCells name="HP" data={selection.hp} max="255" />
-              <TableCells name="SPD" data={selection.spd} max="255" />
+              <TableCells
+                name={`HGT: ${selection.height}`}
+                data={selection.height}
+                max="100"
+              />
+              <TableCells
+                name={`WGT: ${selection.weight}`}
+                data={selection.weight}
+                max="9999"
+              />
+              <TableCells
+                name={`HP: ${selection.hp}`}
+                data={selection.hp}
+                max="255"
+              />
+              <TableCells
+                name={`SPD: ${selection.spd}`}
+                data={selection.spd}
+                max="255"
+              />
             </TableRow>
             <TableRow>
-              <TableCells name="ATK" data={selection.atk} max="255" />
-              <TableCells name="DEF" data={selection.def} max="255" />
-              <TableCells name="SPC_ATK" data={selection.spc_atk} max="255" />
-              <TableCells name="SPC_DEF" data={selection.spc_def} max="255" />
+              <TableCells
+                name={`ATK: ${selection.atk}`}
+                data={selection.atk}
+                max="255"
+              />
+              <TableCells
+                name={`DEF: ${selection.def}`}
+                data={selection.def}
+                max="255"
+              />
+              <TableCells
+                name={`S_ATK: ${selection.spc_atk}`}
+                data={selection.spc_atk}
+                max="255"
+              />
+              <TableCells
+                name={`S_DEF: ${selection.spc_def}`}
+                data={selection.spc_def}
+                max="255"
+              />
             </TableRow>
           </TableBody>
         </Table>

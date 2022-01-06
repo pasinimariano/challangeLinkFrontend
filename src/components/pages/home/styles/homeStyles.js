@@ -6,8 +6,9 @@ export const Styles = makeStyles(() =>
     root: {
       width: "100vw",
       backgroundImage: `url(${HomeBg})`,
-      backgroundRepeat: "no-repeat",
+      backgroundRepeat: "repeat",
       backgroundSize: "cover",
+      backgroundPosition: "center",
     },
     separator: {
       height: "7vh",
@@ -63,6 +64,19 @@ export const Styles = makeStyles(() =>
       color: "#d9cab3ff",
       marginLeft: "4%",
       fontWeight: "bolder",
+    },
+    tableContainer: {
+      backgroundColor: "rgba(0,0,0,0)",
+      width: "80%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      marginTop: "20px",
+      marginBottom: "20%",
+    },
+    statsContainer: {
+      backgroundColor: "#d8d8d8ff",
+      transform: "skew(-21deg, 0deg)",
     },
   })
 );

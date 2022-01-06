@@ -60,19 +60,18 @@ export const Styles = makeStyles(() =>
       display: "flex",
       alignItems: "center",
       flexDirection: "column",
-      height: "90vh",
+      height: "55%",
     },
     tableContainer: {
       backgroundColor: "rgba(0,0,0,0)",
-      width: "65%",
+      width: "70%",
       display: "flex",
       alignItems: "center",
-      justifyContent: "flex-start",
       marginTop: "20px",
       marginBottom: "10px",
     },
     pokedexContainer: {
-      maxHeight: 450,
+      maxHeight: 400,
       width: "100%",
       backgroundColor: "#d8d8d8ff",
       transform: "skew(-21deg, 0deg)",
@@ -94,10 +93,13 @@ export const Styles = makeStyles(() =>
       height: "100%",
       display: "flex",
       justifyContent: "center",
+      marginTop: "15px",
     },
     statsContainer: {
       backgroundColor: "#d8d8d8ff",
       transform: "skew(-21deg, 0deg)",
+      width: "98vh",
+      marginLeft: "30%",
     },
   })
 );
