@@ -25,21 +25,21 @@ export const NavBar = () => {
           label="Home"
           icon={<HomeIcon />}
           route={route}
-          classes={classes}
+          classes={route === "/" ? classes.selected : classes.noSelected}
         />
         <LinkNavigation
           to="/pokedex"
           label="Pokedex"
           icon={<AppsIcon />}
           route={route}
-          classes={classes}
+          classes={route === "/pokedex" ? classes.selected : classes.noSelected}
         />
         <LinkNavigation
           to="/contact"
           label="Contact"
           icon={<EmojiPeopleIcon />}
           route={route}
-          classes={classes}
+          classes={route === "/contact" ? classes.selected : classes.noSelected}
         />
       </BottomNavigation>
     </Grid>
