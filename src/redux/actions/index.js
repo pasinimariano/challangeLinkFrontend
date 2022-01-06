@@ -58,7 +58,7 @@ export const pagination = (pokemons, page, offset, seeker) => {
     response = formatedData(pokemonPagination);
   } else {
     const pokemonSearched = pokemons.filter((pokemon) =>
-      pokemon["name"].toLowerCase().includes(seeker)
+      pokemon["name"].toLowerCase().includes(seeker.toLowerCase())
     );
     const pokemonPagination = pokemonSearched.slice(page, offset);
 

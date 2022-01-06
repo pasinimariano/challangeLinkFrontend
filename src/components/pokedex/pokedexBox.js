@@ -17,23 +17,29 @@ export const PokedexBox = ({
 }) => {
   return (
     <Grid container>
-      <Grid item xs={12} sm={12} lg={6}>
+      <Grid item xs={12} sm={12} md={6}>
         <PokemonData selection={selection} classes={classes} />
       </Grid>
-      <Grid item xs={12} sm={12} lg={6} className={classes.gridTable}>
-        <PokemonTable
-          pokemons={pokemons}
-          classes={classes}
-          setSelection={setSelection}
-        />
-        <Pagination
-          nextPage={nextPage}
-          prevPage={prevPage}
-          classes={classes}
-          indexFirstPokemon={indexFirstPokemon}
-          indexLastPokemon={indexLastPokemon}
-          allPokemons={allPokemons}
-        />
+      <Grid item xs={12} sm={12} md={6} className={classes.gridTable}>
+        {pokemons.length === 0 ? (
+          <h4>No se encontró ningun pokemon</h4>
+        ) : (
+          <>
+            <PokemonTable
+              pokemons={pokemons}
+              classes={classes}
+              setSelection={setSelection}
+            />
+            <Pagination
+              nextPage={nextPage}
+              prevPage={prevPage}
+              classes={classes}
+              indexFirstPokemon={indexFirstPokemon}
+              indexLastPokemon={indexLastPokemon}
+              allPokemons={allPokemons}
+            />
+          </>
+        )}
       </Grid>
     </Grid>
   );
